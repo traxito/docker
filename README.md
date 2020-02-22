@@ -12,3 +12,5 @@ A repository for dockerfiles, guides and notes about Docker
 * Docker cheat sheet: all important commands of Docker on a file
 
 * LXD: how to setup LXD containers on Linux
+
+* Volumes: info and how to volumes
