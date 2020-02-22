@@ -1,0 +1,25 @@
+Docker Machine
+Docker machine is a command-line utility that is used to manage one or more local machines (which are usually run in separate VirtualBox instances) or remote machines that are hosted on cloud providers, e.g., Amazon Web Services, Microsoft Azure, etc.
+
+How to create a Local Machine?
+Docker Toolbox comes with a default Docker machine named ‘default.’ This is just to give us a taste of it and to get us started with, but we may need multiple machines later on to segment the different containers that are running. To do that, we can use the following command:
+
+docker-machine create –d virtualbox montesinos
+This command will create a local machine using a VirtualBox image named ‘montesinos’.
+
+Listing Machines
+If we want to list the machines that we have configured, we can run the following command:
+
+docker-machine ls
+Starting and Stopping Machines
+We can start the Docker machine that we have created using the following command:
+
+docker-machine start montesinos
+Now that the Docker machine has started, we will have to configure the Docker command line with which the Docker daemon should interact. We can use the following command to do this:
+
+docker –machine env montesinos
+eval “$(docker-machine env montesinos)”
+Now, to stop a machine, use the following command:
+
+docker-machine stop montesinos
+Note: These start and stop commands will start and stop our VirtualBox VMs, and we can watch the state of the VMs changing while we run the commands if we have the VirtualBox manager open.
