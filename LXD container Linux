@@ -1,0 +1,22 @@
+#how to setup LXD containers on Linux
+https://linuxcontainers.org/lxc/getting-started/
+
+sudo apt-get install lxd
+sudo lxc-create -t ubuntu -n newpc -t download -->-t template -n name 
+sudo lxc-ls (llista de containers)
+sudo lxc-start -n newpc -d  --->-n name -d detach shell
+sudo lxc-ls --fancy ---> contariner details (ip, ports, etc)
+lxc-attach -n my-container ---> per entrar dintre sense ssh
+install ssh
+sudo passwd ubuntu
+enter password for ubuntu user
+
+exit to your user and then connect to the container with ssh
+
+sudo ssh ubuntu@10.0.3.XXX
+
+password ubuntu
+
+lxc-stop -n my-container
+
+lxc-destroy -n my-container
