@@ -1,0 +1,15 @@
+#commands and how to run bash on a container of Alpine
+
+sudo docker exec -it <container> sh
+
+docker run -it --rm alpine /bin/ash
+
+docker run -it --rm alpine /bin/sh
+
+docker run -it --rm alpine ash
+
+docker run -it --rm alpine sh
+
+--rm Automatically remove the container when it exits.
+
+Inside the container: apk add bash
