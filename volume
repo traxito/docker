@@ -1,0 +1,29 @@
+#info and how to volumes on docker
+
+Docker Volume: volumes across containers and downloadables with the image
+
+Create a volume: sudo docker volume create dockervolume
+List volumes: sudo docker volume ls
+Mounting a volume on a container: sudo docker run -it --mount source=<name_of_docker_volume>, target=<directory_on_container_we_want> -d <image_name>
+EX: sudo docker run -it --mount source=dockervolume, target=/testvolume -d ubuntu
+EX of apache volume: sudo docker run -it --mount source=apache, target=/var/www/html -d ubuntuandapache
+
+When a file has been copied to a docker volume it remains there forever until we delete the volume and doesnt matter if we kill or stop the container using the volume.
+
+
+
+
+BIND MOUNT(dont work on diferrent enviroments or OS, like Ubuntu or Centos): To share a volume of the host to the containers
+
+Create a dir on host: mkdir dockervolume
+Create files or move them to this directory
+Run a container with the next syntax: sudo docker run -it -d -v <source of the volume on the host:destination folder on the container> imageid
+EX: sudo docker run -it -d -v /home/adminp/dockervolume:/dockermount 648796A646
+
+COPY files between container and host
+
+From host to container: sudo docker cp <source> <container_id>:<target_path>
+EX: sudo docker cp ./blublublu.txt 456846546:/testvolume
+
+From container to host (but we need to do the command on host site): sudo docker cp <container_id>:<path_of_file> <target_host_path>
+EX: sudo docker cp 568465465:/testvolume/blux3.txt /home/adminp
