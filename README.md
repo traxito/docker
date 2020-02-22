@@ -10,3 +10,5 @@ A repository for dockerfiles, guides and notes about Docker
 * Alpine: commands and how to run bash on a container of Alpine
 
 * Docker cheat sheet: all important commands of Docker on a file
+
+* LXD: how to setup LXD containers on Linux
