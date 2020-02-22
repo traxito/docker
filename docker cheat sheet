@@ -1,0 +1,8 @@
+https://drive.google.com/open?id=1ykQi4zGJlt16ggB_g4JiuzmdDhMFt_T9
+
+#added important commands on Docker
+sudo docker build -t(tag prova_docker) <source> (.)
+sudo docker port <container_name>
+sudo docker top <container_name>
+Remove all containers: docker container prune
+Docker daemon start EC2: sudo service docker start
